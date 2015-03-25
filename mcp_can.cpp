@@ -29,11 +29,11 @@
 		delay(10);
 		return ret;
 	}
-	#define spi_read() spi_readwrite(0x00)
 #else
 	#define spi_readwrite SPI.transfer
-	#define spi_read() spi_readwrite(0x00)
 #endif
+
+#define spi_read() spi_readwrite(0x00)
 
 /*********************************************************************************************************
 ** Function name:           mcp2515_reset
@@ -849,11 +849,6 @@ INT8U MCP_CAN::readMsgBuf(INT8U *len, INT8U buf[])
        for(int i = 0; i<m_nDlc && i < MAX_CHAR_IN_MESSAGE; i++) {
          buf[i] = m_nDta[i];
        } 
-#if DEBUG_MODE
-       Serial.print("readMsgBuf: m_nDlc = ");
-       Serial.print(m_nDlc);
-       Serial.print("\r\n");
-#endif
     } else {
        *len = 0;
 #if DEBUG_MODE
