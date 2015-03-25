@@ -36,7 +36,9 @@
 #endif
 
 // if print debug information
-#define DEBUG_MODE 0
+#define DEBUG_MODE 1
+// master slow mode
+#define DEBUG_MODE_SLOW
 
 /*
  *   Begin mt
