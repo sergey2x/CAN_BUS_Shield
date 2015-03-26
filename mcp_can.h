@@ -108,6 +108,7 @@ public:
     INT8U checkError(void);                                         /* if something error           */
     INT32U getCanId(void);                                          /* get can id when receive      */
     INT8U isRemoteRequest(void);                                    /* get RR flag when receive     */
+    INT8U getCanExtFlg(void);            	                    /* get extended flag when receive     */
 };
 
 #endif
