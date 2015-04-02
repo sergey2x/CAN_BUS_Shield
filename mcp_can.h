@@ -106,6 +106,7 @@ public:
     INT8U readMsgBufID(INT32U *ID, INT8U *len, INT8U *buf);         /* read buf with object ID      */
     INT8U checkReceive(void);                                       /* if something received        */
     INT8U checkError(void);                                         /* if something error           */
+    INT8U checkError(INT8U* err);                                   /* if something error (err code)*/
     INT32U getCanId(void);                                          /* get can id when receive      */
     INT8U isRemoteRequest(void);                                    /* get RR flag when receive     */
     INT8U getCanExtFlg(void);            	                    /* get extended flag when receive     */

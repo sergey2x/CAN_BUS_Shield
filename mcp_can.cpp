@@ -916,6 +916,25 @@ INT8U MCP_CAN::checkError(void)
 }
 
 /*********************************************************************************************************
+** Function name:           checkError
+** Descriptions:            if something error (and get error code)
+*********************************************************************************************************/
+INT8U MCP_CAN::checkError(INT8U* err)
+{
+    INT8U eflg = mcp2515_readRegister(MCP_EFLG);
+
+    if ( eflg & MCP_EFLG_ERRORMASK ) 
+    {
+        *err = eflg;
+        return CAN_CTRLERROR;
+    }
+    else 
+    {
+        return CAN_OK;
+    }
+}
+
+/*********************************************************************************************************
 ** Function name:           getCanId
 ** Descriptions:            when receive something ,u can get the can id!!
 *********************************************************************************************************/
