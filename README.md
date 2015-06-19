@@ -1,6 +1,6 @@
 CAN BUS Shield
 ---------------------------------------------------------
-[![CAN BUS Shield](http://www.seeedstudio.com/depot/images/product/canbus.jpg)](http://www.seeedstudio.com/depot/wifi-bee-v20-p-1637.html)
+[![CAN BUS Shield](http://www.seeedstudio.com/depot/images/1130300211.jpg)](http://www.seeedstudio.com/depot/wifi-bee-v20-p-1637.html)
 
 
 
@@ -35,13 +35,14 @@ The available baudrates are listed as follws:
 	#define CAN_40KBPS   6
 	#define CAN_50KBPS   7
 	#define CAN_80KBPS   8
-	#define CAN_95KBPS   9
-	#define CAN_100KBPS  10
-	#define CAN_125KBPS  11
-	#define CAN_200KBPS  12
-	#define CAN_250KBPS  13
-	#define CAN_500KBPS  14
-	#define CAN_1000KBPS 15
+	#define CAN_83K3BPS  9
+	#define CAN_95KBPS   10
+	#define CAN_100KBPS  11
+	#define CAN_125KBPS  12
+	#define CAN_200KBPS  13
+	#define CAN_250KBPS  14
+	#define CAN_500KBPS  15
+	#define CAN_1000KBPS 16
 
 
 <br>
@@ -120,6 +121,15 @@ In conditions that masks and filters have been set. This function can only get f
 
 **buf** is where you store the data.
 
+<br>
+## 7. Check additional flags
+
+When frame is received you may check whether it was remote request and whether it was an extended (29bit) frame.
+
+    CAN.isRemoteRequest();
+    CAN.isExtendedFrame();
+
+**return value** is '0' for a negative response and '1' for a positive
 
 
 <br>
@@ -128,7 +138,7 @@ For more information, please refer to [wiki page](http://www.seeedstudio.com/wik
     
 ----
 
-This software is written by loovee ([luweicong@seeedstudio.com](luweicong@seeedstudio.com "luweicong@seeedstudio.com")) for seeed studio<br>
+This software is written by loovee ([luweicong@seeed.cc](luweicong@seeed.cc "luweicong@seeed.cc")) for seeed studio<br>
 and is licensed under [The MIT License](http://opensource.org/licenses/mit-license.php). Check License.txt for more information.<br>
 
 Contributing to this software is warmly welcomed. You can do this basically by<br>

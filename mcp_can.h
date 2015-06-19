@@ -109,6 +109,7 @@ public:
     INT8U checkError(INT8U* err);                                   /* if something error (err code)*/
     INT32U getCanId(void);                                          /* get can id when receive      */
     INT8U isRemoteRequest(void);                                    /* get RR flag when receive     */
+    INT8U isExtendedFrame(void);                                    /* did we recieve 29bit frame?  */
     INT8U getCanExtFlg(void);            	                    /* get extended flag when receive     */
 };
 
